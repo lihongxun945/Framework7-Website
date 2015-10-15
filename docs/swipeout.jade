@@ -194,7 +194,7 @@ block content
           |     &lt;a href="#" class="swipeout-delete"&gt;Delete&lt;/a&gt;
           |   &lt;/div&gt;
           | &lt;/li&gt;
-      p 可以在点击删除按钮的时候调用确认询问模态窗口（Confirm modal），只有在确认后才会将需要删除的元素从列表中移除。使用确认功能只需要把“data-confirm”和“data-confirm-title”(可选)属性加到删除菜单链接（&lt;a class="swipeout-delete"&gt;）上：
+      p 可以在点击删除按钮的时候调用确认询问模态窗口（Confirm modal），只有在确认后才会将需要删除的元素从列表中移除。使用确认功能只需要把“data-confirm”和“data-confirm-title”(可选)属性加到删除菜单链接上：
       pre
         code
           | &lt;li class="swipeout"&gt;
@@ -205,6 +205,20 @@ block content
           |   &lt;div class="swipeout-actions-right"&gt;
           |     &lt;!-- We add data-confirm and data-confirm-title attributes --&gt;
           |     &lt;a href="#" class="swipeout-delete" data-confirm="Are you sure want to delete this item?" data-confirm-title="Delete?"&gt;Delete&lt;/a&gt;
+          |     &lt;/div&gt;
+          |   &lt;/div&gt;
+          | &lt;/li&gt;
+      p If you want to close swipeout element when user dismissed Confirm modal, then you need also to add <b>data-close-on-cancel</b> attribute:
+      pre
+        code
+          | &lt;li class="swipeout"&gt;
+          |   &lt;div class="swipeout-content item-content"&gt;
+          |     &lt;div class="item-media"&gt;...&lt;/div&gt;
+          |     &lt;div class="item-inner"&gt;...&lt;/div&gt;
+          |   &lt;/div&gt;
+          |   &lt;div class="swipeout-actions-right"&gt;
+          |     &lt;!-- We add data-close-on-cancel attribute to close swipeout automatically --&gt;
+          |     &lt;a href="#" class="swipeout-delete" data-confirm="Are you sure want to delete this item?" data-confirm-title="Delete?" data-close-on-cancel="true"&gt;Delete&lt;/a&gt;
           |     &lt;/div&gt;
           |   &lt;/div&gt;
           | &lt;/li&gt;
@@ -224,8 +238,13 @@ block content
           |   &lt;/div&gt;
           | &lt;/li&gt;
       .important-note
-        p <code>overswipe</code> 只能用在右滑的最后一个按钮或者左滑的第一个按钮。
-        p overswipe 的时候会自动在overswipe按钮上触发click事件，所以你需要在该按钮上绑定正确的事件监听。
+        ul
+          li
+            p <b>overswipe</b> can be used only on last button in right swipeout actions, and only on first button in left swipeout actions.
+          li
+            p With overswipe, script will automatically trigger "click" event on overswipe button, so you need to add appropriate event listener to this button
+          li
+            p Overswipe button will have additonal <b>"swipeout-overswipe-active"</b> class during overswipe which you can use for additional styling of such state
       pre
         code
           | &lt;li class="swipeout"&gt;

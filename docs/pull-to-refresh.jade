@@ -53,11 +53,24 @@ block content
               th 描述（Description）
           tbody
             tr
+              td pullstart
+              td Pull To Refresh content<span>&lt;div class="pull-to-refresh-content"&gt;</span>
+              td Event will be triggered when you start to move pull to refresh content
+            tr
+              td pullmove
+              td Pull To Refresh content<span>&lt;div class="pull-to-refresh-content"&gt;</span>
+              td Event will be triggered during you move pull to refresh content
+            tr
+              td pullend
+              td Pull To Refresh content<span>&lt;div class="pull-to-refresh-content"&gt;</span>
+              td Event will be triggered when you release pull to refresh content
+            tr
               td refresh
-              td 拥有下拉刷新功能的界面<span>&lt;div class="pull-to-refresh-content"&gt;</span>
-              td 事件会在下拉刷新进入“refreshing”状态时触发
-        h2 重置下拉刷新
-        p 在我们刷新页面内容之后，需要重置下拉刷新组件，以使用户可以再次下拉：
+              td refreshdone
+              td Pull To Refresh content<span>&lt;div class="pull-to-refresh-content"&gt;</span>
+              td Event will be triggered after pull to refresh is done and it is back to initial state (after calling <b>pullToRefreshDone</b> method)
+        h2 Reset Pull To Refresh
+        p After we refreshed page content, we need to reset pull to refresh component to let user pull it again:
         .method-wrap
           p
             span.method myApp.pullToRefreshDone(<span>ptrContent</span>) 
