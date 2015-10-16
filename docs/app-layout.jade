@@ -9,10 +9,10 @@ block content
     .docs-nav
       include ../jade/_docs-menu
     .docs-content
-      h1 App HTML Layout
-      p First thing we should do for our App is to create <code>index.html</code> file with app's skeleton. 
-      h2 Basic iOS App Layout
-      p First of all, let's look on the most basic layout for iOS theme
+      h1 App HTML 布局
+      p 首先我们需要做的是创建一个 <code>index.html</code> 文件。
+      h2 基本 iOS 应用布局
+      p 首先，我们看看 iOS 主题的最基本布局。
       pre
         code
           | &lt;!DOCTYPE html&gt;
@@ -74,9 +74,9 @@ block content
           |     &lt;script type="text/javascript" src="path/to/my-app.js"&gt;&lt;/script&gt;
           |   &lt;/body&gt;
           | &lt;/html&gt; 
-      p As you may see the layout is pretty simple. The main point is that you should link Framework7's CSS in the <code>&lt;head&gt;</code> and JS files in the end of <code>&lt;body&gt;</code>.
-      p You can read more about statusbar overlay, views, navbar, toolbar, pages, panels and other components in appropriate sections.
-      h2 Basic Android/Material App Layout
+      p 就像你看到的一样，布局非常简单。主要的一点就是你要在 <code>&lt;head&gt;</code> 中引入 Framework7's 的 CSS 文件，并且在 <code>&lt;body&gt;</code> 结尾处引入JS文件。
+      p 在后面的章节你能读到更多的关于 overlay, views, navbar, toolbar, pages, panels 以及其他组件的说明。
+      h2 基本 Android/Material 布局
       pre
         code
           | &lt;!DOCTYPE html&gt;
@@ -140,6 +140,6 @@ block content
           |   &lt;/body&gt;
           | &lt;/html&gt; 
 
-      p As you may see the Material layout is almost the same. It just has different CSS files related to Material theme, and a bit different page structure where Navbar and Toolbar are inside of the page
-      h2 Initialize App
-      p Now when we have basic template, we need to <a href="init-app.html">initialize our app</a> in <code>my-app.js</code>.
+      p Material 布局基本和 iOS 是一样的。只是他使用的是不同的CSS文件，并且页面结构有一些细小的区别 - Navbar 和 Toolbar 在 page 里面。
+      h2 初始化应用
+      p 有了基本布局之后，我们需要在 <code>my-app.js</code> 中<a href="init-app.html">初始化应用</a> .
